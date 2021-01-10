@@ -13,3 +13,14 @@ if(($tipo =="tipo") && ($ciudad == "Ciudad")){
     $contenido = json_decode(file_get_contents('data-1.json'));
     $id = [];
     foreach ($contenido as $value) {
+        //Limpiar variable
+        //Limpiando la informacion y dividiendola
+        list($valor, $ceros) = explode(',', $value->Precio);
+        $valor;
+        list($eliminado, $contenidoLimpio) = explode('$', $valor);
+        $contenidoLimpio;
+        $total = $contenidoLimpio.$ceros;
+        if(($total >= $min) &&($total <= $max)){
+            array_push($id, $value->Id);
+        }else{}
+    }
